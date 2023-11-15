@@ -3,13 +3,14 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Week4' });
 });
 
 router.get('/recipe/:food', function(req, res) {
   let recipeName = req.params.food; 
   let recipe = req.body;
-  res.send(recipeName)
+  res.send(recipe)
+  res.render('index', {title: recipeName, });
   //console.log(req.params.food);
   //console.log(req.body);
 })
