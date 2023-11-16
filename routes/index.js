@@ -10,6 +10,7 @@ router.get('/recipe/:food', function(req, res) {
   let recipeName = req.params.food; 
   let recipe = req.body;
   res.render('recipe', {title: recipeName, ingredients: recipe.ingredients, instructions: recipe.instructions});
+  //res.send(recipe);
 })
 
 router.post("/recipe/", function(req, res) {
