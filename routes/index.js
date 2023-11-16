@@ -7,9 +7,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/recipe/:food', function(req, res) {
-  let recipeName = req.params.food; 
+  //let recipeName = req.params.food; 
   let recipe = req.body;
-  res.render('recipe', {title: recipeName, ingredients: recipe.ingredients, instructions: recipe.instructions});
+  res.render('recipe', {title: req.body.name, ingredients: recipe.ingredients, instructions: recipe.instructions});
   //res.send(recipe);
 })
 
