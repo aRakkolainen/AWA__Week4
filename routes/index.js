@@ -9,10 +9,11 @@ router.get('/', function(req, res, next) {
 router.get('/recipe/:food', function(req, res) {
   let recipeName = req.params.food; 
   let recipe = req.body;
-  res.send(recipe)
-  res.render('index', {title: recipeName, });
-  //console.log(req.params.food);
-  //console.log(req.body);
+  res.render('recipe', {title: recipeName, ingredients: recipe.ingredients, instructions: recipe.instructions});
+})
+
+router.post("/recipe/", function(req, res) {
+
 })
 
 module.exports = router;
