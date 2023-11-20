@@ -19,9 +19,9 @@ router.get('/recipe/:food', function(req, res) {
   //let recipeName = req.params.food; 
   let recipe = req.body;
   //How to send and render at same time: https://expressjs.com/en/guide/using-middleware.html
-  //res.render('recipe', {title: req.body.name, ingredients: recipe.ingredients, instructions: recipe.instructions});
   console.log(recipe)
-  res.send(recipe);
+  res.render('recipe', {title: req.body.name, ingredients: recipe.ingredients, instructions: recipe.instructions});
+  //res.send(recipe);
 })
 router.post("/recipe/", function(req, res) {
 
