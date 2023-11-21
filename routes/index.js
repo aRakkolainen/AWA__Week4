@@ -24,7 +24,8 @@ router.get('/recipe/:food', function(req, res) {
     "instructions": req.body.instructions, 
     "ingredients": req.body.ingredients
   }
-  res.send(recipe);
+  //res.send(recipe);
+  res.send(recipe)
 })
 router.post("/recipe/", function(req, res) {
 
