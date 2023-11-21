@@ -21,13 +21,15 @@ router.get('/recipe/:food', function(req, res) {
   //res.send(req.body)
   let recipe = {
     "name": req.params.food,
-    "instructions": req.body.instructions, 
-    "ingredients": req.body.ingredients
+    "instructions": ["Bake the dough", "Place the toppings", "Bake in the oven"],
+    "ingredients": ["flour", "yeast", "water", "cheese", "tomatoes", "ham", "ketchup", "pineapple"]
   }
   //res.send(recipe);
   res.send(recipe)
+  //res.render("index", {title: recipe.name, instructions: recipe.instructions, ingredients: recipe.ingredients})
 })
 router.post("/recipe/", function(req, res) {
+  //let newRecipe = 
 
 })
 
