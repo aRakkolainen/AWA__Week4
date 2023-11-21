@@ -8,13 +8,6 @@ if (document.readyState !== "loading") {
   }
 
 const fetchRecipe = async () => {
-    let recipeName = "pizza"
-    let ingredients = ["flour", "water", "salt", "yeast", "oil", "cheese", "tomatoes", "tomatosose", "ham", "pineapple"];
-    let instructions = ["Prepare the pizza dough", "Place toppings", "Bake in 250 degrees for 15 minutes"]
-    
-    console.log(recipeName)
-    console.log(ingredients)
-    console.log(instructions)
     let response = await fetch("http://localhost:3000/recipe/pizza", 
     {method: "GET",  headers: {
         "Content-type": "application/json"
