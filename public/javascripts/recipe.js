@@ -1,8 +1,9 @@
 
 async function getRecipe() {
-    let response = await fetch("http://localhost:3000/recipe/pancake")
+    let response = await fetch("http://localhost:3000/recipe/pizza")
     let recipe = await response.json(); 
-   // console.log(recipe)
+    //console.log(recipe)
+    return recipe
 //console.log(response.json())
 }
 
@@ -55,10 +56,32 @@ async function addNewRecipe() {
     })
 
 }
+function renderPage(recipe) {
+    let nameItem = document.getElementById("recipe-name");
+    let ingredientsList = recipe.ingredients; 
+    let instructionsList = recipe.instructions; 
+    nameItem.innerText = recipe.name;
+    let Ing_list = document.getElementById("ingredients-list");
+    ingredientsList.forEach(ingredient => {
+        let item = document.createElement("li");
+        item.innerText = ingredient; 
+        Ing_list.appendChild(item);
+    });
 
+    let Inst_list = document.getElementById("instructions-list");
+    instructionsList.forEach(instruction => {
+        let item = document.createElement("li");
+        item.innerText =instruction; 
+        Inst_list.appendChild(item);
+    });
+    //body.appendChild(Ing_list);
+}
 window.onload = async function() {
     //Task 1
     let recipe = await getRecipe()
+    renderPage(recipe)
+    
+    
     addNewRecipe();
 
 

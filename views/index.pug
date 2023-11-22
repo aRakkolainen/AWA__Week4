@@ -2,16 +2,13 @@ extends layout
 
 block content
    h1= title
-    //h2 Ingredients
-    //ul
-        each val in ingredients
-            li= val
+    h2#recipe-name
+    h2 Ingredients
+    ul#ingredients-list
+    
 
-    //h2 Instructions 
-    //ul 
-        each val in instructions
-            li= val
-    br
+    h2 Instructions 
+     ul#instructions-list
  
     br
     h4 New recipe name
