@@ -30,7 +30,6 @@ router.post("/recipe/", function(req, res) {
 })
 
 router.post("/images", function(req, res) {
-  console.log(req.body)
   res.send("Images received!");
 })
 

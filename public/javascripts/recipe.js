@@ -59,7 +59,12 @@ async function addNewRecipe() {
 
 async function sendImages() {
     const imageInput = document.getElementById("image-input");
-    let images = imageInput.files;
+    let images_temp = imageInput.files;
+    let images = []
+    for (let i=0; i < images_temp.length; i++) {
+        images.push(images_temp[i].name)
+    }
+    //console.log(images[0].name)
     //Example how to use formData: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects
     //Sending FormData: https://medium.com/deno-the-complete-reference/sending-form-data-using-fetch-in-node-js-8cedd0b2af85
     let imageData = new FormData();
