@@ -6,7 +6,6 @@ async function getRecipe() {
     return recipe
 //console.log(response.json())
 }
-
 async function addNewRecipe() {
     //Finding elements: 
     const newRecipeName = document.getElementById("name-text");
@@ -36,7 +35,6 @@ async function addNewRecipe() {
         } 
     })
 
-
     submitBtn.addEventListener("click", async () => {
         if (newRecipeName.value !== "" && ingredients.length != 0 && instructions.length != 0 ) {
             let recipe = {
@@ -53,8 +51,17 @@ async function addNewRecipe() {
            let data = await response.json(); 
            console.log(data);
         }
+
+        sendImages()
     })
 
+}
+
+async function sendImages() {
+    const imageInput = document.getElementById("image-input");
+    let images = imageInput.value;
+    let imagesData = new FormData()
+    console.log(imagesData)
 }
 function renderPage(recipe) {
     let nameItem = document.getElementById("recipe-name");

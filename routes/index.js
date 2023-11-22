@@ -29,4 +29,8 @@ router.post("/recipe/", function(req, res) {
 
 })
 
+router.post("/images", function(req, res) {
+  res.send("Images received!");
+})
+
 module.exports = router;

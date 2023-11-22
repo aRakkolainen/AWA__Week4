@@ -1,26 +1,51 @@
 extends layout
 
 block content
-   h1= title
-    h2#recipe-name
-    h2 Ingredients
-    ul#ingredients-list
-    
+    header
+    nav(class="red lighten-2")
+        div(class="nav-wrapper")
+            a(href="#" class="brand-logo left") Recipes
+            ul(id="nav-mobile" class="right hide-on-med-and-down")
+                li 
+                    a(href="#") Sass
+                li
+                    a(href="#") Components
+                li
+                    a(href="#") Javascript 
+                li
+                    a(href="#") Mobile 
 
-    h2 Instructions 
-     ul#instructions-list
- 
-    br
-    h4 New recipe name
-    input(type="text" id="name-text" placeholder="Insert new recipe name")   
-    h4 Ingredients 
-    textarea#ingredients-text
-    br
-    button#add-ingredient(type="button") Add ingredient
-    h4 Instructions 
-    textarea#instructions-text
-    br
-    button#add-instruction(type="button") Add instruction 
-    br
-    br
-    button#submit(type="submit") Submit
+            ul(class="sidenav" id="mobile-demo")
+                li
+                    a(href="#") Sass
+                li
+                    a(href="#") Components
+                li
+                    a(href="#") Javascript 
+                li
+                    a(href="#") Mobile 
+
+    div(class="container")
+        h1= title
+        div(class="col")
+
+            h3#recipe-name
+            h4 Ingredients
+            ul#ingredients-list
+            h4 Instructions 
+            ul#instructions-list
+        div(class="col")
+            input(type="text" id="name-text" placeholder="Insert new recipe name")   
+            h4 Ingredients 
+            textarea#ingredients-text 
+            button#add-ingredient(type="button" class="btn") Add ingredient
+            h4 Instructions 
+            textarea#instructions-text
+            button#add-instruction(type="button" class="btn") Add instruction 
+            br
+            br
+            label(for="image-input") Add image(s) 
+            input(type="file" id="image-input")
+            br
+            br
+            button#submit(type="submit" class="btn") Submit
