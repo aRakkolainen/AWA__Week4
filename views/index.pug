@@ -3,11 +3,27 @@ extends layout
 block content
    h1= title
     //h2 Ingredients
-    ul
+    //ul
         each val in ingredients
             li= val
 
     //h2 Instructions 
-    ul 
+    //ul 
         each val in instructions
             li= val
+    br
+ 
+    br
+    h4 New recipe name
+    input(type="text" id="name-text" placeholder="Insert new recipe name")   
+    h4 Ingredients 
+    textarea#ingredients-text
+    br
+    button#add-ingredient(type="button") Add ingredient
+    h4 Instructions 
+    textarea#instructions-text
+    br
+    button#add-instruction(type="button") Add instruction 
+    br
+    br
+    button#submit(type="submit") Submit

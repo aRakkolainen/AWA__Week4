@@ -16,20 +16,16 @@ router.get('/', function(req, res, next) {
 })*/
 
 router.get('/recipe/:food', function(req, res) {
-  //console.log(req.params.food)
-  //How to send and render at same time: https://expressjs.com/en/guide/using-middleware.html
-  //res.send(req.body)
   let recipe = {
     "name": req.params.food,
     "instructions": ["Bake the dough", "Place the toppings", "Bake in the oven"],
     "ingredients": ["flour", "yeast", "water", "cheese", "tomatoes", "ham", "ketchup", "pineapple"]
   }
-  //res.send(recipe);
   res.send(recipe)
-  //res.render("index", {title: recipe.name, instructions: recipe.instructions, ingredients: recipe.ingredients})
 })
 router.post("/recipe/", function(req, res) {
-  //let newRecipe = 
+  let newRecipe = req.body; 
+  res.send(newRecipe) 
 
 })
 
