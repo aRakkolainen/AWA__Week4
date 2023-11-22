@@ -59,9 +59,15 @@ async function addNewRecipe() {
 
 async function sendImages() {
     const imageInput = document.getElementById("image-input");
-    let images = imageInput.value;
-    let imagesData = new FormData()
-    console.log(imagesData)
+    let images = imageInput.files;
+    //Example how to use formData: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects
+    //Sending FormData: https://medium.com/deno-the-complete-reference/sending-form-data-using-fetch-in-node-js-8cedd0b2af85
+    let imageData = new FormData();
+    imageData.append("images", images);
+    let body = imageData;
+    let response = await fetch("http://localhost:3000/images", {method: "POST", body,});
+    let text = await response.text(); 
+    console.log(text);
 }
 function renderPage(recipe) {
     let nameItem = document.getElementById("recipe-name");
